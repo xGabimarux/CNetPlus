@@ -263,7 +263,7 @@ voice register dn 10
  allow watch
 !
 voice register pool 1
- id mac 00bc.60bf.47c6
+ id mac c4cc.03f0.19bc
  number 1 dn 1
  number 2 dn 2
  number 3 dn 3
@@ -275,7 +275,7 @@ voice register pool 1
  type 8851
 !
 voice register pool 2
- id mac dcf7.19d9.b574
+ id mac c4c6.03f0.233c
  number 1 dn 6
  number 2 dn 8
  number 3 dn 9
