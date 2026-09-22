@@ -263,7 +263,7 @@ voice register dn 10
  allow watch
 !
 voice register pool 1
- id mac c4cc.03f0.19bc
+ id mac c4c6.03f0.19b6
  number 1 dn 1
  number 2 dn 2
  number 3 dn 3
@@ -310,9 +310,9 @@ conf t
   destination-pattern 11..
   session target ipv4:10.11.100.8
   codec g711ULAW
- dial-peer voice 31 Voip
-  destination-pattern 31..
-  session target ipv4:10.31.100.8
+ dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
   codec g711ULAW
  dial-peer voice 21 Voip
   destination-pattern 21..
@@ -322,10 +322,10 @@ conf t
   destination-pattern 22..
   session target ipv4:10.22.100.8
   codec g711ULAW
- dial-peer voice 31 Voip
-  destination-pattern 31..
-  session target ipv4:10.31.100.8
-  codec g711ULAW
+! dial-peer voice 31 Voip
+!  destination-pattern 31..
+ ! session target ipv4:10.31.100.8
+!  codec g711ULAW
  dial-peer voice 32 Voip
   destination-pattern 32..
   session target ipv4:10.32.100.8
@@ -449,32 +449,7 @@ config system virtual-switch
 end
 
 !Set ip address & static mode to internal1 ( Line 451-476 Paste on FORTINET 60E )
-config system interface
- edit wan1
-  set mode static
-  set ip 200.0.0.31 255.255.255.0 
-  set allowaccess ping https ssh telnet
-  set role wan
-  set alias "INTERNET"
-  set status up
-  next
- edit internal1
-  set mode static
-  set ip 10.31.31.1 255.255.255.0
-  set allowaccess ping https ssh telnet http
-  set role lan
-  set alias "INTERNAL"
-  set status up
-  next
-edit loopback1
-  set vdom root
-  set mode static
-  set ip 31.0.0.1 255.255.255.255
-  set allowaccess ping
-  set type loopback
-  set status up
- end
-end
+ 
 
 TASK4***TASK4***TASK4*** ( FORTINET ROUTING 80E and 60E Configurations )
 !OSPF Routing on Fortinet ( Line 480-500 Paste on FORTINET 60E or 80E )
